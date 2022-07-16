@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+
+}
+
+
+#transparent-fixed{
+    width: 100%;
+    position: fixed;
+    padding: 5px;
+
+}
+
+.resaltado{
+    padding-bottom: 2px;
+    color: rgb(71, 125, 211);
+    border-bottom: 3px solid rgb(71, 125, 211);
+    transition: 0.5s;
+}
+
+.resaltado:hover{
+    border-bottom: 1px solid rgba(71, 125, 211, 0);
+}
+
+
+
+#mini-menu > #oculto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#oculto{
+    visibility: hidden;
+    height: 0px;
+    transform: translateY(1vh);
+}
+
+#mini-menu:hover #oculto{
+    visibility: visible;
+    background-color: #fff;
+    height: 100%;
+}
+
+
+
+#transparent-fixed ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+#transparent-fixed ul li{
+    list-style: none;
+}
+
+#transparent-fixed ul li a{
+
+    text-decoration: none;
+}
+
+/* FIN DEL NAVBAR */
+
+
+
+/* INICIO HEADER */
+
+section header{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background-attachment: fixed;
+    background-image: url('img/arnold-francisca-f77Bh3inUpE-unsplash.svg');
+}
+
+section header div{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+section header div h1{
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 4rem;
+}
+
+
+section header img{
+    height: 800px;
+    object-fit: cover;
+}
+
+
+article{
+    background-image: url("img/Shiny\ Overlay.svg");
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
