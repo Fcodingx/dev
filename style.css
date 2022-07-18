@@ -7,20 +7,26 @@
 
 }
 
-#transparent-fixed{
-    width: 100%;
-    padding: 5px;
+#logo{
+    position: fixed;
+    padding-left: 2rem;
+}
 
+#transparent-fixed{
+    margin: 0 12% 0 12%;
+    padding: 1.3rem;
+    background-color: #1a1a4089;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .resaltado{
-    background-color: rgb(71, 125, 211);
+    background-color: rgb(71, 71, 211);
     color: #fff;
-    padding: 35px;
-    border-bottom: 3px solid rgb(71, 125, 211);
+    padding: 35px 35px 22px ;
     transition: 0.5s;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
 }
 
 
@@ -49,28 +55,6 @@
     align-items: center;
 }
 
-#oculto{
-    visibility: hidden;
-    height: 0px;
-    background-color: #fff;
-    transform: translateY(1vh);
-    transition: .3s;
-}
-
-#oculto > li{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid black
-}
-
-#mini-menu:hover #oculto{
-    visibility: visible;
-    height: 100%;
-    width: 10vw;
-    color: transparent;
-    transition: .3s;
-    padding: 5px;
-}
 
 
 
@@ -99,6 +83,7 @@
 
 /* INICIO  */
 
+
 section {
     width: 100%;
     height: 100%;
@@ -106,10 +91,11 @@ section {
     background-image: url('img/arnold-francisca-f77Bh3inUpE-unsplash.svg');
 }
 
-section div{
+#header{
     display: flex;
     align-items: center;
-    padding: 0 20% 0 20%;
+    padding: 0 15% 0 15%;
+    justify-content: space-around;
 }
 
 article{
@@ -119,7 +105,7 @@ article{
 }
 
 section div div:nth-child(1){
-    height: 91vh;
+    height: 77vh;
     display: flex;
     align-items: center;
     align-content: center;
@@ -129,19 +115,35 @@ section div div:nth-child(1){
     animation: space 1s;
 }
 
-section div div:nth-child(2){
+section div:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+#frase p{
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 7vh;
+    text-align: center;
+
+}
+
+
+section div div:nth-child(2) img{
 background-color: rgba(79, 79, 79, 0.103);
-height: 50vh;
-width: 50px;
-border-radius: 50%;
 backdrop-filter: blur(5px);
 border-top: 1px solid rgba(255, 255, 255, 0.098) ;
 border-bottom: 2px solid rgba(255, 255, 255, 0.153);
 display: flex;
 align-items: center;
 justify-content: center;
-object-fit: contain;
+padding: 4rem;
+border-radius: 50%;
+
+
+
 }
+
 
 section div div:nth-child(2) img{
     filter: drop-shadow(2px 0px 10px white);
@@ -161,7 +163,7 @@ section  div h1{
     font-size: 10rem;
 }
 
-section  div p{
+section  div div p{
     text-align: center;
     justify-content: center;
     color: #fff;
@@ -248,7 +250,8 @@ main{
     padding: 0 10px;
     height: 100vh;
     margin: 0 12% 0 12%;
-    background-color: #1A1A40;
+    background-color: #1a1a4089;
+    backdrop-filter: blur(5px);
 }
 
 
