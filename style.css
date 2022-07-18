@@ -3,33 +3,47 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 
 }
 
-
 #transparent-fixed{
     width: 100%;
-    position: fixed;
     padding: 5px;
 
 }
 
 .resaltado{
-    padding-bottom: 2px;
-    color: rgb(71, 125, 211);
+    background-color: rgb(71, 125, 211);
+    color: #fff;
+    padding: 35px;
     border-bottom: 3px solid rgb(71, 125, 211);
     transition: 0.5s;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.resaltado:hover{
-    border-bottom: 1px solid rgba(71, 125, 211, 0);
+
+
+.a-color{
+    color: white;
+}
+
+.a-color:hover{
+    color: rgb(71, 125, 211);
+    border-bottom: 3px solid rgb(71, 125, 211);
+}
+
+.a-color:hover .resaltado{
+    color: #fff;
+    border-bottom: 0px solid rgba(71, 125, 211, 0);
 }
 
 
-
-#mini-menu > #oculto{
+#mini-menu > ul{
+    align-content: flex-start;
+    align-items: flex-start;
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,13 +52,24 @@
 #oculto{
     visibility: hidden;
     height: 0px;
+    background-color: #fff;
     transform: translateY(1vh);
+    transition: .3s;
+}
+
+#oculto > li{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black
 }
 
 #mini-menu:hover #oculto{
     visibility: visible;
-    background-color: #fff;
     height: 100%;
+    width: 10vw;
+    color: transparent;
+    transition: .3s;
+    padding: 5px;
 }
 
 
@@ -61,49 +86,212 @@
 }
 
 #transparent-fixed ul li a{
-
     text-decoration: none;
+    transition: 0.3s;
 }
+
+
+
 
 /* FIN DEL NAVBAR */
 
 
 
-/* INICIO HEADER */
+/* INICIO  */
 
-section header{
+section {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
+    height: 100%;
     background-attachment: fixed;
     background-image: url('img/arnold-francisca-f77Bh3inUpE-unsplash.svg');
 }
 
-section header div{
+section div{
+    display: flex;
+    align-items: center;
+    padding: 0 20% 0 20%;
+}
+
+article{
+    padding: 10px;
+    background-color: rgb(71, 125, 211);
+
+}
+
+section div div:nth-child(1){
+    height: 91vh;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    animation: space 1s;
 }
 
-section header div h1{
+section div div:nth-child(2){
+background-color: rgba(79, 79, 79, 0.103);
+height: 50vh;
+width: 50px;
+border-radius: 50%;
+backdrop-filter: blur(5px);
+border-top: 1px solid rgba(255, 255, 255, 0.098) ;
+border-bottom: 2px solid rgba(255, 255, 255, 0.153);
+display: flex;
+align-items: center;
+justify-content: center;
+object-fit: contain;
+}
+
+section div div:nth-child(2) img{
+    filter: drop-shadow(2px 0px 10px white);
+    animation: destellos 1s  1s;
+}
+
+@keyframes space {
+    50%{
+        gap: 5rem;
+    }
+}
+
+section  div h1{
     text-align: center;
     justify-content: center;
     color: #fff;
-    font-size: 4rem;
+    font-size: 10rem;
+}
+
+section  div p{
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+section  div h1, section  div p 
+{
+    animation: appear 2s ;
+}
+
+section  div h1
+{
+    animation: size .8s;
+}
+
+@keyframes size {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        font-size: 12rem;
+    }
 }
 
 
-section header img{
-    height: 800px;
-    object-fit: cover;
+@keyframes appear {
+    0%{
+        color: rgba(255, 255, 255, 0);
+        opacity: 0;
+        visibility: hidden;
+    }
+    50%{
+        color: rgb(255, 255, 255);
+    }
 }
 
 
-article{
-    background-image: url("img/Shiny\ Overlay.svg");
-    width: 100%;
+@keyframes destellos {
+
+    0%{
+        opacity: 0;
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    15%{
+        opacity: 0;
+    }
+
+    30%{
+        opacity: 1;
+    }
+    
+    40%{
+        opacity: 0;
+    }
+
+    41%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    55%{
+        opacity: 1;
+    }
+
+    70%{
+        opacity: 0;
+    }
+
+
+}
+
+
+
+main{
+    padding: 0 10px;
     height: 100vh;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    margin: 0 12% 0 12%;
+    background-color: #1A1A40;
+}
+
+
+
+@media (max-width:1024px) {
+    section{
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        background-attachment: fixed;
+        background-image: url('img/arnold-francisca-f77Bh3inUpE-unsplash.svg');
+    }
+
+    section div{
+        width: 100%;
+        height: 81vh;
+    }
+
+    section  div h1{
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 5rem;
+    }
+    
+    section  div p{
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    #transparent-fixed ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1rem;
+    }
+
+    
+article{
+    height: 200vh;
+    margin: 0 0 0 0;
+    background-color: #fff;
+}
 }
