@@ -1,11 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
 
+
+::-webkit-scrollbar{
+    background: transparent;
+    width: .4rem;
+}
+
+::-webkit-scrollbar-thumb{
+background: linear-gradient(transparent, rgb(103, 42, 195)); 
+border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, rgb(155, 102, 234));
+    }
+    
+
+
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 
 }
+body{
+    overflow: overlay;
+}
+
+
 
 #logo{
     position: fixed;
@@ -13,15 +36,31 @@
 }
 
 #transparent-fixed{
-    margin: 0 12% 0 12%;
-    padding: 1.3rem;
+    margin: 0 8% 0 8%;
+    padding: 1.3rem .8rem 0 .8rem;
     background-color: #1a1a4089;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .resaltado{
     background-color: rgb(71, 71, 211);
+    color: #fff;
+    padding: 50px 35px 22px ;
+    transition: 0.5s;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 20px;
+}
+
+.a-color{
+    color: white;
+}
+
+.a-color:hover{
+    background-color: rgba(71, 71, 211, 0.21);
     color: #fff;
     padding: 35px 35px 22px ;
     transition: 0.5s;
@@ -29,40 +68,24 @@
     border-top-right-radius: 20px;
 }
 
-
-
-.a-color{
-    color: white;
-}
-
-.a-color:hover{
-    color: rgb(71, 125, 211);
-    border-bottom: 3px solid rgb(71, 125, 211);
-}
-
 .a-color:hover .resaltado{
     color: #fff;
     border-bottom: 0px solid rgba(71, 125, 211, 0);
 }
 
-
-#mini-menu > ul{
-    align-content: flex-start;
-    align-items: flex-start;
-    visibility: hidden;
+#transparent-fixed ul:nth-child(1){
     display: flex;
-    flex-direction: column;
     align-items: center;
+    font-size: 1.5rem;
+    gap: 1.5rem;
 }
 
-
-
-
-#transparent-fixed ul{
+#transparent-fixed ul:nth-child(2){
     display: flex;
     align-items: center;
-    justify-content: space-around;
     font-size: 1.5rem;
+    gap: 2rem;
+    padding-bottom: 1rem;
 }
 
 #transparent-fixed ul li{
@@ -74,17 +97,29 @@
     transition: 0.3s;
 }
 
+#transparent-fixed ul li a img:hover{
+color: #1a1a4089;
+}
 
+svg{
+    height: 35px;
+    width: 35px;
+    fill: #fff;
+    transition: 0.3s;
+}
+
+svg:hover{
+    transform: translateY(-10px);
+    fill: rgb(71, 71, 211);
+
+}
 
 
 /* FIN DEL NAVBAR */
 
-
-
 /* INICIO  */
 
-
-section {
+section:nth-child(2) {
     width: 100%;
     height: 100%;
     background-attachment: fixed;
@@ -98,11 +133,6 @@ section {
     justify-content: space-around;
 }
 
-article{
-    padding: 10px;
-    background-color: rgb(71, 125, 211);
-
-}
 
 section div div:nth-child(1){
     height: 77vh;
@@ -128,7 +158,6 @@ section div:nth-child(2){
 
 }
 
-
 section div div:nth-child(2) img{
 background-color: rgba(79, 79, 79, 0.103);
 backdrop-filter: blur(5px);
@@ -143,7 +172,6 @@ border-radius: 50%;
 
 
 }
-
 
 section div div:nth-child(2) img{
     filter: drop-shadow(2px 0px 10px white);
@@ -161,6 +189,8 @@ section  div h1{
     justify-content: center;
     color: #fff;
     font-size: 10rem;
+    animation: magic 2s;
+    animation: size .8s;
 }
 
 section  div div p{
@@ -168,17 +198,10 @@ section  div div p{
     justify-content: center;
     color: #fff;
     font-size: 2.5rem;
-}
-
-section  div h1, section  div p 
-{
     animation: appear 2s ;
 }
 
-section  div h1
-{
-    animation: size .8s;
-}
+
 
 @keyframes size {
     0%{
@@ -189,7 +212,6 @@ section  div h1
         font-size: 12rem;
     }
 }
-
 
 @keyframes appear {
     0%{
@@ -202,6 +224,19 @@ section  div h1
     }
 }
 
+@keyframes magic {
+    0%{
+        color: rgba(255, 255, 255, 0);
+        opacity: 0;
+        visibility: hidden;
+    }
+    20%{
+        color: rgb(255, 255, 255);
+    }
+
+
+
+}
 
 @keyframes destellos {
 
@@ -244,17 +279,11 @@ section  div h1
 
 }
 
-
-
 main{
-    padding: 0 10px;
-    height: 100vh;
-    margin: 0 12% 0 12%;
-    background-color: #1a1a4089;
-    backdrop-filter: blur(5px);
+    padding: 0rem 13px;
+    margin: 0 8% 0 8%;
+    background-color: #1a1a40f0;
 }
-
-
 
 @media (max-width:1024px) {
     section{
@@ -292,9 +321,99 @@ main{
     }
 
     
-article{
-    height: 200vh;
-    margin: 0 0 0 0;
-    background-color: #fff;
+
 }
+
+#content{
+    padding: 10px;
+    background-color: rgb(71, 71, 211);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+}
+
+#content article{
+    grid-column: span 2;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.contenido-aside{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+}
+
+.contenido-aside h2{
+    font-size: 3rem;
+}
+
+#art-cont{
+    font-size: 1.2rem;
+    box-shadow: 1px 5px 60px rgba(0, 0, 0);
+}
+
+#art-cont h1{
+    width: 9ch;
+    font-family: 'consolas';
+    font-size: 0rem;
+    animation: typing 2s  5s steps(9) alternate, bl .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes bl {
+    50%{
+        border-color: transparent;
+    }
+}
+
+#card{
+    grid-area: span 1 ;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+.ccls{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    margin-bottom: 1rem;
+}
+
+.red{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff605c;
+}
+.yellow{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffbd44;
+}
+.green{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00ca4e;
 }
