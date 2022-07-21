@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
 
+body{
+    overflow-y: hidden;
+}
 
 ::-webkit-scrollbar{
     background: transparent;
@@ -14,11 +17,10 @@ border-radius: 50px;
 ::-webkit-scrollbar-thumb:hover{
     background: linear-gradient(transparent, rgb(155, 102, 234));
     }
-    
-
 
 
 *{
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -27,8 +29,6 @@ border-radius: 50px;
 body{
     overflow: overlay;
 }
-
-
 
 #logo{
     position: fixed;
@@ -101,14 +101,42 @@ body{
 color: #1a1a4089;
 }
 
-svg{
+a svg{
+    width: 20px;
+    height: 25px;
+    transition: .5s;
+}
+
+#boton {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(85, 0, 171);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px;
+    font-size: 1.3rem;
+    transition: .5s;
+}
+#boton:hover{
+    letter-spacing: .3rem;
+}
+
+#boton:hover svg{
+    transform: translateY(10px);
+}
+
+
+
+ul svg{
     height: 35px;
     width: 35px;
     fill: #fff;
     transition: 0.3s;
 }
 
-svg:hover{
+ul svg:hover{
     transform: translateY(-10px);
     fill: rgb(71, 71, 211);
 
@@ -131,8 +159,8 @@ section:nth-child(2) {
     align-items: center;
     padding: 0 15% 0 15%;
     justify-content: space-around;
-}
 
+}
 
 section div div:nth-child(1){
     height: 77vh;
@@ -145,15 +173,23 @@ section div div:nth-child(1){
     animation: space 1s;
 }
 
-section div:nth-child(2){
+#code-logo{
     display: flex;
     justify-content: center;
+
+}
+
+#frase{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3rem;
 }
 
 #frase p{
     color: #fff;
     font-size: 1.3rem;
-    margin-bottom: 7vh;
+    margin-bottom: 2vh;
     text-align: center;
 
 }
@@ -168,15 +204,11 @@ align-items: center;
 justify-content: center;
 padding: 4rem;
 border-radius: 50%;
-
-
-
+filter: drop-shadow(2px 0px 10px white);
+animation: destellos 1s  1s;
 }
 
-section div div:nth-child(2) img{
-    filter: drop-shadow(2px 0px 10px white);
-    animation: destellos 1s  1s;
-}
+
 
 @keyframes space {
     50%{
@@ -184,7 +216,7 @@ section div div:nth-child(2) img{
     }
 }
 
-section  div h1{
+section div h1{
     text-align: center;
     justify-content: center;
     color: #fff;
@@ -200,8 +232,6 @@ section  div div p{
     font-size: 2.5rem;
     animation: appear 2s ;
 }
-
-
 
 @keyframes size {
     0%{
@@ -283,56 +313,18 @@ main{
     padding: 0rem 13px;
     margin: 0 8% 0 8%;
     background-color: #1a1a40f0;
-}
-
-@media (max-width:1024px) {
-    section{
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        background-attachment: fixed;
-        background-image: url('img/arnold-francisca-f77Bh3inUpE-unsplash.svg');
-    }
-
-    section div{
-        width: 100%;
-        height: 81vh;
-    }
-
-    section  div h1{
-        text-align: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 5rem;
-    }
-    
-    section  div p{
-        text-align: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 1rem;
-    }
-
-    #transparent-fixed ul{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        font-size: 1rem;
-    }
-
-    
-
+    scroll-behavior: smooth;
 }
 
 #content{
     padding: 10px;
     background-color: rgb(71, 71, 211);
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto 5rem;
     gap: 1rem;
 }
 
-#content article{
+#art-cont{
     grid-column: span 2;
     background-color: #fff;
     border-radius: 8px;
@@ -357,18 +349,13 @@ main{
 #art-cont h1{
     width: 9ch;
     font-family: 'consolas';
-    font-size: 0rem;
-    animation: typing 2s  5s steps(9) alternate, bl .5s step-end infinite alternate;
+    font-size: 2rem;
+    animation:  bl .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 4px solid;
+    border-right: 2px solid;
 }
 
-@keyframes typing {
-    from{
-        width: 0;
-    }
-}
 
 @keyframes bl {
     50%{
@@ -377,7 +364,7 @@ main{
 }
 
 #card{
-    grid-area: span 1 ;
+    grid-area:'aside' ;
     background-color: #fff;
     padding: 1rem;
     border-radius: 8px;
@@ -388,7 +375,8 @@ main{
 }
 
 footer{
-    grid-area: footer;
+    margin-top: 2rem;
+    grid-column: span 3;
 }
 
 
@@ -417,3 +405,88 @@ footer{
     border-radius: 50%;
     background-color: #00ca4e;
 }
+
+@media (max-width:991px) {
+    #contenido{
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed;
+        background-image: url('img/arnold-francisca-f77Bh3inUpE-unsplash.svg');
+    }
+
+    #header{
+        align-content: center;
+        flex-direction: column;
+        width: 100%;
+        min-width: 100%;
+        height: 70vh;
+        padding: 0% 0% 0% 0%;
+        margin-bottom: 2rem;
+    }
+
+    #inicio h1{
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 5rem;
+        animation-delay: 1s;
+    }
+    
+    #inicio p{
+        font-size: 1rem;
+    }
+
+    #inicio p{
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    #transparent-fixed{
+        margin: 0;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    main{
+        margin: 0;
+        padding: 0;
+    }
+
+    #transparent-fixed ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 0.2rem;
+    }
+
+    #transparent-fixed ul  li a{
+        font-size: 1rem;
+    }
+    
+    #code-logo img{
+        padding: 1.5rem;
+    width: 90px;
+    height: 90px;
+    }
+
+    @keyframes size {
+        0%{
+            opacity: 0;
+        }
+    
+        50%{
+            font-size: 8rem;
+        }
+    }
+    
+    #logo{
+        display: none;
+    }
+
+    #art-cont{
+        grid-column: span 3;
+    }
+}
+
